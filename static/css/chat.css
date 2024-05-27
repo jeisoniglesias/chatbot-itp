@@ -1,0 +1,62 @@
+#liveToast {
+  max-height: 60vh; /* Maximum height of 70% of the viewport height */
+  height: 60vh; /* Maximum height of 70% of the viewport height */
+}
+
+.toast {
+  opacity: 1 !important;
+}
+.time-message {
+  font-size: 0.7rem !important;
+}
+.border-toast,
+.card {
+  border-radius: 15px 15px 15px 15px !important;
+}
+.card-header {
+  border-radius: 15px 15px 0 0 !important;
+  border-bottom: 0 !important;
+}
+.card-footer {
+  border-radius: 0 0 15px 15px !important;
+  border-top: 0 !important;
+  max-height: 30% !important;
+}
+
+.msg_head {
+  position: relative;
+}
+
+.type_msg {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  border: 0 !important;
+  resize: none;
+}
+.type_msg:focus {
+  box-shadow: none !important;
+  outline: 0px !important;
+}
+.svg-button {
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.svg-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.svg-button:hover {
+  background-color: #e0e0e0;
+}
+@media (max-width: 576px) {
+  .chat-actions {
+    display: flex;
+    justify-content: end;
+    margin-top: 10px;
+  }
+}
