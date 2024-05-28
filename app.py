@@ -11,7 +11,7 @@ from flask import (
     flash,
 )
 
-from src.api_client import APIClient
+from src.api_client import ApiClient
 
 app = Flask(__name__)
 app.secret_key = os.getenv("SECRET_KEY", "supersecretkey")
@@ -45,14 +45,14 @@ def answer():
     payload = request.form.get("payload")
     if not payload.strip():
         return redirect(url_for("index"))
-    api_client = APIClient()
+    api_client = ApiClient()
     response_data = api_client.make_request(payload)
-
+    """
     if "error" in response_data:
         error_message = response_data["error"]
         session["error_message"] = error_message
         return redirect(url_for("error"))
-
+    """
     return redirect(url_for("index"))
 
 

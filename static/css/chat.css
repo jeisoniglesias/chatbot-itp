@@ -1,6 +1,6 @@
 #liveToast {
-  max-height: 60vh; /* Maximum height of 70% of the viewport height */
-  height: 60vh; /* Maximum height of 70% of the viewport height */
+  max-height: 60vh;
+  height: 60vh;
 }
 
 .toast {
@@ -20,7 +20,7 @@
 .card-footer {
   border-radius: 0 0 15px 15px !important;
   border-top: 0 !important;
-  max-height: 30% !important;
+  max-height: 35% !important;
 }
 
 .msg_head {
@@ -58,5 +58,74 @@
     display: flex;
     justify-content: end;
     margin-top: 10px;
+    margin-bottom: 0;
   }
+  #liveToast {
+    max-height: 70vh;
+    height: 70vh;
+  }
+  .chat-actions {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .svg-button {
+    padding-bottom: 0px !important;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+.btn-chat {
+  animation: bounce 2s infinite;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Icono SVG */
+.btn-chat svg {
+  width: 60px;
+  height: 60px;
+  margin-right: 8px;
+  fill: currentColor; /* Hereda el color del texto */
+  transition: transform 0.3s;
+  color: #333;
+}
+
+/* Estado normal */
+.btn-chat:not(:hover) svg {
+  transform: rotate(0deg);
+}
+
+/* Estado hover */
+.btn-chat:hover {
+  transform: translateY(-2px);
+}
+
+.btn-chat:hover svg {
+  transform: rotate(360deg);
+}
+.delete-chat {
+  font-size: small;
+}
+.bg-question {
+  background-color: #dfdfdf;
+}
+.card-body.overflow-auto#chat-data {
+  max-height: 400px; /* Ajusta según tus necesidades */
+  overflow-y: auto;
 }
