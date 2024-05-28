@@ -1,7 +1,5 @@
 import os
-from datetime import datetime
 import requests
-from deep_translator import GoogleTranslator
 from flask import (
     Flask,
     get_flashed_messages,
@@ -13,103 +11,56 @@ from flask import (
     flash,
 )
 
+from src.api_client import APIClient
+
 app = Flask(__name__)
 app.secret_key = os.getenv("SECRET_KEY", "supersecretkey")
 
 
-def format_time(dt):
-    return dt.strftime("%I:%M %p").lstrip("0").replace("AM", "am").replace("PM", "pm")
-
-
-def translate_text(text):
-    return GoogleTranslator(source="auto", target="es").translate(text)
-
-
-def query(payload):
-    headers = {
-        "Authorization": os.getenv("TOKEN_API"),
-        "Content-Type": "application/json",
-    }
-    response = requests.post(os.getenv("API_URL"), headers=headers, json=payload)
-    if response.status_code == 200:
-        return response.json()
-    elif response.status_code == 402:
-        detail = response.json()["detail"]
-        return {"error": translate_text(detail), "code": response.status_code}
-    else:
-        return {
-            "error": "Ocurrio un error inesperado, por favor intenta de nuevo mas tarde :(",
-            "code": 404,
-        }
-
-
-def response(payload):
-    question_time = datetime.now()
-    output = query({"in-0": payload, "user_id": """2"""})
-    if "error" in output:
-        return output
-    to_translate = output["outputs"]["out-0"]
-    translated = translate_text(to_translate)
-    answer_time = datetime.now()
-    if "chat_history" not in session:
-        session["chat_history"] = []
-    session["chat_history"].append(
-        {
-            "message_type": "question",
-            "text": payload,
-            "time": format_time(question_time),
-        }
-    )
-    session["chat_history"].append(
-        {"message_type": "answer", "text": translated, "time": format_time(answer_time)}
-    )
-    session.modified = True
-    return translated
-
-
 @app.route("/", methods=["GET", "POST"])
 def index():
-    error_present = False
-    messages = []
-    if get_flashed_messages(with_categories=True):
-        messages = get_flashed_messages(with_categories=True)
-    print("messages")
-    print(messages)
-    if request.method == "POST":
-        user_input = request.form["user_input"]
-        if user_input.strip():
-            result = response(user_input)
-            if "error" in result:
-                flash(result.get("error"), "alert-danger")
-                error_present = True
-                return redirect(url_for("error", error_message=result.get("error")))
-            else:
-                flash("Query successful!", "success")
-        chat_history = session.get("chat_history", [])
-        return render_template(
-            "index.html",
-            chat_history=chat_history,
-            messages=messages,
-            error_present=error_present,
-        )
-
+    conversation = session.get("conversation", [])
     return render_template(
-        "index.html", chat_history=[], messages=messages, error_present=False
+        "pages/index.html",
+        conversation=conversation,
+        messages=session.get("messages", []),
     )
 
 
 @app.route("/error")
 def error():
-    error_message = request.args.get("error_message", "An unknown error occurred.")
-    return render_template("error.html", error_message=error_message)
+    error_message = session.get("error_message", "Ha ocurrido un error desconocido.")
+    return render_template("pages/error.html", error_message=error_message)
 
 
 @app.route("/clear_session", methods=["POST"])
 def clear_session():
-    session.pop("chat_history", None)
-    session.pop("_flashes", None)
+    session.pop("conversation", None)
+    session.pop("error_message", None)
+    return redirect(url_for("index"))
+
+
+@app.route("/answer", methods=["POST"])
+def answer():
+    payload = request.form.get("payload")
+    if not payload.strip():
+        return redirect(url_for("index"))
+
+    headers = {
+        "Authorization": os.getenv("TOKEN_API"),
+        "Content-Type": "application/json",
+    }
+
+    api_client = APIClient(os.getenv("API_URL"), headers)
+    response_data = api_client.make_request(payload)
+
+    if "error" in response_data:
+        error_message = response_data["error"]
+        session["error_message"] = error_message
+        return redirect(url_for("error"))
+
     return redirect(url_for("index"))
 
 
 if __name__ == "__main__":
-    app.run(debug=True, use_reloader=True)
+    app.run(debug=True)
