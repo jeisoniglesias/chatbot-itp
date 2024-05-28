@@ -45,13 +45,7 @@ def answer():
     payload = request.form.get("payload")
     if not payload.strip():
         return redirect(url_for("index"))
-
-    headers = {
-        "Authorization": os.getenv("TOKEN_API"),
-        "Content-Type": "application/json",
-    }
-
-    api_client = APIClient(os.getenv("API_URL"), headers)
+    api_client = APIClient()
     response_data = api_client.make_request(payload)
 
     if "error" in response_data:

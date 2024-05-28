@@ -1,5 +1,7 @@
+import os
 from flask import session
 import requests
+from dotenv import load_dotenv
 
 from src.text_utilities import TextUtilities
 
@@ -7,11 +9,15 @@ utilities = TextUtilities()
 
 
 class APIClient:
-    def __init__(self, api_url, headers):
-        self.api_url = api_url
-        self.headers = headers
+    def __init__(self):
+        self.api_url = os.getenv("API_URL")
+        self.headers = {
+            "Authorization": os.getenv("TOKEN_API"),
+            "Content-Type": "application/json",
+        }
 
     def make_request(self, payload):
+
         response = None
         try:
             session.modified = True
@@ -35,13 +41,31 @@ class APIClient:
             """
 
             question_time = utilities.format_time()
+            import requests
+
+            API_URL = os.getenv("API_URL2")
+            headers = {
+                "Authorization": "Bearer f0b46b8c-5fc2-4c87-80ec-4edba0081c1b",
+                "Content-Type": "application/json",
+            }
+
+            def query(payload):
+                response = requests.post(API_URL, headers=headers, json=payload)
+                return response
+
+            response = query(
+                {
+                    "in-0": f"""{payload}""",
+                    "user_id": """<USER or Conversation ID>""",
+                }
+            )
             pregunta = {"in-0": payload, "user_id": """<USER or Conversation ID>"""}
             print(pregunta)
-            response = requests.post(
+            """response = requests.post(
                 self.api_url,
                 headers=self.headers,
                 json=pregunta,
-            )
+            )"""
 
             answer_time = utilities.format_time()
             response.raise_for_status()
@@ -74,7 +98,6 @@ class APIClient:
                 response_json = response.json()
                 if "detail" in response_json:
                     error_message = response_json["detail"]
-            print(error_message)
             return {
                 "error": utilities.translate_text(error_message),
             }
