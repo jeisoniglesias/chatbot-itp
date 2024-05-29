@@ -114,5 +114,5 @@ class ApiClient:
     def _get_fallback_response(self, payload, question_time):
         # TODO: Implementar un mecanismo de fallback para responder según intenciones
         answer = "No pude contestar a tu pregunta, por favor intenta de nuevo. NPL"
-        self._update_session_conversation(payload, question_time, answer)
+        #self._update_session_conversation(payload, question_time, answer)
         return False
