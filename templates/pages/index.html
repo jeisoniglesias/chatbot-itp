@@ -62,6 +62,13 @@ title %}Chatbot itp - Chat{% endblock %} {% block styles %}
             data-chat="{{ conversation }}"
             id="chat-data"
           >
+            <div class="info-chat">
+              {% for message in conversation %}
+              <!---->
+              {{ macros.chat_message(message.text, message.time,
+              message.message_type) }} {% endfor %}
+              <!---->
+            </div>
             {% if not conversation %}
             <div class="alert alert-info" role="alert">
               Hola, soy el chatbot de ITP. respondere a tus preguntas
@@ -75,7 +82,7 @@ title %}Chatbot itp - Chat{% endblock %} {% block styles %}
                 method="post"
                 id="clearChatButton"
               >
-                <button type="button" class="btn btn-transparent delete-chat">
+                <button type="submit" class="btn btn-transparent delete-chat">
                   <span class="fst-italic">Eliminar conversacion</span>
 
                   <svg
@@ -112,14 +119,7 @@ title %}Chatbot itp - Chat{% endblock %} {% block styles %}
                 </button>
               </form>
             </div>
-            <div class="info-chat">
-              {% for message in conversation %}
-              <!---->
-              {{ macros.chat_message(message.text, message.time,
-              message.message_type) }} {% endfor %}
-              <!---->
-              {% endif %}
-            </div>
+            {% endif %}
           </div>
 
           <div class="card-footer text-body-secondary">

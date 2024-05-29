@@ -23,23 +23,11 @@ class ApiClient:
             session.modified = True
 
             question_time = utilities.format_time()
-
-            # Verificar el fallback antes de hacer la solicitud a la API
-            fallback_response = self._get_fallback_response(payload, question_time)
-            if fallback_response:
-                print("respuesta con npl")
-                translated = fallback_response
-                self._update_session_conversation(
-                    payload, question_time, translated, None
-                )
-                return {"response": translated}
-            print("error en npl")
-
             response = self._send_request(payload)
-            response.raise_for_status()
 
-            text_processor = TextProcessor(response.json())
-            data = text_processor.process_text()
+            response.raise_for_status()
+            textProcessor = TextProcessor(response.json())
+            data = textProcessor.process_text()
             print(data)
             translated = utilities.translate_text(data["response"])
 
@@ -49,11 +37,12 @@ class ApiClient:
 
             return data
         except requests.exceptions.RequestException as e:
-            print("error en api")
-
-            translated = "No pude contestar a tu pregunta, por favor intenta de nuevo."
-            self._update_session_conversation(payload, question_time, translated, None)
-            return {"response": translated}
+            return self._handle_request_exception(
+                e,
+                response,
+                payload,
+                question_time,
+            )
 
     def _send_request(self, payload):
         question_payload = {
@@ -109,10 +98,10 @@ class ApiClient:
                 "time": error_time,
             }
         )
-        return False
+        return self._get_fallback_response(payload, question_time)
 
     def _get_fallback_response(self, payload, question_time):
-        # TODO: Implementar un mecanismo de fallback para responder según intenciones
-        answer = "No pude contestar a tu pregunta, por favor intenta de nuevo. NPL"
+        # TODO: Implementar un mecanismo de fallback solicitar a clase de NLP que responde segun intenciones
+        answer = "No pude contestar a tu pregunta, por favor intenta de nuevo."
         self._update_session_conversation(payload, question_time, answer)
-        return False
+        return True

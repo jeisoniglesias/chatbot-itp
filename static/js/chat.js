@@ -70,12 +70,9 @@ function adjustTextarea(textarea) {
 }
 function showClearBTN(chatData) {
     const clearButton = document.getElementById('clearChatButton');
-
     if (chatData.length > 2) {
         clearButton.style.display = 'block';
-    } else {
-        clearButton.style.display = 'none';
-    }
+    } 
 }
 function clearSession() {
     fetch('/clear_session', {

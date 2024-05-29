@@ -35,6 +35,7 @@ def error():
 
 @app.route("/clear_session", methods=["POST"])
 def clear_session():
+    print("clear session")
     session.pop("conversation", None)
     session.pop("error_message", None)
     return redirect(url_for("index"))
