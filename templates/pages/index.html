@@ -63,11 +63,29 @@ title %}Chatbot itp - Chat{% endblock %} {% block styles %}
             id="chat-data"
           >
             <div class="info-chat">
-              {% for message in conversation %}
+              {% if conversation %} {% for message in conversation %}
+
               <!---->
               {{ macros.chat_message(message.text, message.time,
-              message.message_type) }} {% endfor %}
+              message.message_type,message.other_data) }} {% endfor %}
               <!---->
+              <div class="container-fluid bg-transparent">
+                {% if follow_up%}
+                <!---->
+                {% if follow_up %}
+                <div class="d-flex flex-wrap align-items-center">
+                  {% for data in follow_up %}
+                  <div class="p-2 ps-0 follow_up" data-value="{{data}}">
+                    {{data}}
+                  </div>
+                  {% endfor %}
+                </div>
+                {% endif %}
+                <!---->
+
+                {% endif %}
+              </div>
+              {% endif %}
             </div>
             {% if not conversation %}
             <div class="alert alert-info" role="alert">
@@ -123,7 +141,11 @@ title %}Chatbot itp - Chat{% endblock %} {% block styles %}
           </div>
 
           <div class="card-footer text-body-secondary">
-            <form action="{{ url_for('answer') }}" method="post">
+            <form
+              action="{{ url_for('answer') }}"
+              method="post"
+              id="answerForm"
+            >
               <div class="row h-100 p-2">
                 <div class="col-12 col-sm-10 m-0 p-0 pe-1">
                   <textarea

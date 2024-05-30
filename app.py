@@ -20,9 +20,11 @@ app.secret_key = os.getenv("SECRET_KEY", "supersecretkey")
 @app.route("/", methods=["GET", "POST"])
 def index():
     conversation = session.get("conversation", [])
+    follow_up = session.get("follow_up", [])
     return render_template(
         "pages/index.html",
         conversation=conversation,
+        follow_up=follow_up,
         messages=session.get("messages", []),
     )
 

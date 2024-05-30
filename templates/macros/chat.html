@@ -1,7 +1,7 @@
-{# templates/macros/chat.html #} {% macro chat_message(text, time, message_type)
-%} {% set alignment_class = "end" if message_type == "question" else "start" %}
-{% set card_class = "bg-question" if message_type == "question" else "bg-light"
-%}
+{# templates/macros/chat.html #} {% macro chat_message(text, time,
+message_type,other_data=None) %} {% set alignment_class = "end" if message_type
+== "question" else "start" %} {% set card_class = "bg-question" if message_type
+== "question" else "bg-light" %}
 <div class="container d-flex justify-content-{{ alignment_class }} mb-2 ">
   <div class="card {{ card_class }} w-75">
     <div class="card-body p-1">

@@ -129,3 +129,21 @@
   max-height: 400px; /* Ajusta según tus necesidades */
   overflow-y: auto;
 }
+
+.follow_up {
+  font-size: small;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Agregamos la transición */
+}
+
+.follow_up:hover {
+  background-color: #f0f0f0; /* Color de fondo al pasar el cursor */
+  color: #333; /* Color de texto al pasar el cursor */
+}
+
+.follow_up:active {
+  background-color: #e0e0e0; /* Color de fondo al hacer clic */
+  color: #111; /* Color de texto al hacer clic */
+}
+.hidden {
+  display: none;
+}

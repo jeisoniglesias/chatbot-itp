@@ -1,0 +1,691 @@
+{
+  "intents": [
+    {
+      "tag": "capacidad",
+      "patterns": [
+        "¿Qué sabes hacer?",
+        "¿Para qué estás hecho?",
+        "¿Qué puedes alcanzar?",
+        "¿Sobre qué puedes responder?",
+        "¿Cuál es tu capacidad?",
+        "¿Qué temas puedes manejar?",
+        "¿Qué tipo de información puedes proporcionar?",
+        "¿Cómo puedes ayudarme?",
+        "¿Qué conocimientos tienes?",
+        "¿Cuáles son tus habilidades?"
+      ],
+      "responses": [
+        "Estoy diseñado para proporcionar información sobre el Instituto Tecnológico del Putumayo, incluyendo detalles sobre el Consejo Directivo, el Consejo Académico, los procesos de matrícula, las categorías y calidad de los estudiantes, sus derechos y deberes, los programas académicos, las unidades de formación, los créditos académicos, la cancelación y adición de unidades de formación, los cursos intensivos, el periodo académico, la asistencia a actividades académicas, la evaluación y calificaciones, la evaluación de estudiantes por competencias, el rendimiento académico, el trabajo de grado, el otorgamiento de títulos, las constancias y certificados de estudio, los reconocimientos y estímulos, los servicios de bienestar, el régimen disciplinario, las sanciones, el procedimiento disciplinario, las disposiciones varias, y la vigencia del estatuto. Puedo ayudarte con preguntas específicas sobre cada uno de estos temas y más."
+      ]
+    },
+    {
+      "tag": "saludos",
+      "patterns": ["hola", "Hola", "como estas", "buenos dias", "una consulta", "que tal", "¿Como estas?", "Buenos dias"],
+      "responses": ["Buen dia, ¿cómo puedo asistirte con respecto a nuestro Instituto Tecnológico del Putumayo?"],
+      "follow_up": [
+        "¿Qué temas puedes manejar?",
+        "¿Cómo puedes ayudarme?"
+      ]
+    },
+
+    {
+      "tag": "consejo_directivo",
+      "patterns": [
+        "consejo directivo",
+        "funciones del consejo directivo",
+        "¿Qué es el consejo directivo?",
+        "¿Cuáles son las funciones del consejo directivo?",
+        "¿Quiénes integran el consejo directivo?",
+        "¿Cómo se eligen los miembros del consejo directivo?",
+        "¿Qué decisiones toma el consejo directivo?",
+        "¿Qué es un acuerdo del consejo directivo?",
+        "¿Cuál es la estructura del consejo directivo?",
+        "¿Qué atribuciones tiene el consejo directivo?"
+      ],
+      "responses": [
+        "El Consejo Directivo es el máximo órgano de gobierno del Instituto. Sus funciones incluyen aprobar el plan de desarrollo institucional, el presupuesto, la creación y supresión de programas académicos, entre otras decisiones estratégicas. Está integrado por el rector, representantes de los docentes, estudiantes, egresados, y el sector productivo. Sus decisiones se formalizan a través de acuerdos."
+      ],
+      "follow_up": [
+        "consejo académico"
+      ]
+    },
+    {
+      "tag": "consejo_academico",
+      "patterns": [
+        "consejo académico",
+        "funciones del consejo académico",
+        "¿Qué es el consejo académico?",
+        "¿Cuáles son las funciones del consejo académico?",
+        "¿Quiénes integran el consejo académico?",
+        "¿Cómo se eligen los miembros del consejo académico?",
+        "¿Qué decisiones toma el consejo académico?",
+        "¿Qué es una resolución del consejo académico?",
+        "¿Cuál es la estructura del consejo académico?",
+        "¿Qué atribuciones tiene el consejo académico?"
+      ],
+      "responses": [
+        "El Consejo Académico es el máximo órgano de decisión en materia académica del Instituto. Sus funciones incluyen aprobar los planes de estudio, coordinar las actividades académicas, y evaluar el desempeño académico. Está integrado por el rector, los decanos, y representantes de los docentes y estudiantes. Sus decisiones se formalizan mediante resoluciones."
+      ],
+      "follow_up": [
+        "¿Qué es la matrícula inicial?"
+      ]
+    },
+    {
+      "tag": "matricula",
+      "patterns": [
+        "matrícula inicial",
+        "requisitos para la matrícula",
+        "¿Qué implica la renovación de matrícula?",
+        "prematrícula",
+        "liquidación y pago de derechos",
+        "¿Cómo se realiza la prematrícula?",
+        "¿Qué documentos se necesitan para la matrícula inicial?",
+        "¿Cuál es el proceso de liquidación y pago de derechos?",
+        "¿Qué es la prematrícula?",
+        "¿Cuáles son las etapas de la renovación de matrícula?"
+      ],
+      "responses": [
+        "La matrícula inicial es el acto personal que cumple todo aspirante admitido ante la dependencia encargada de Admisiones, Registro y Control Académico dentro de las fechas establecidas en el calendario académico oficial vigente, por medio del cual será considerado como estudiante regular para el período lectivo correspondiente. La renovación de matrícula es el acto personal que cumple todo estudiante regular para mantener su condición de estudiante regular para el período lectivo correspondiente. La prematrícula, liquidación y pago de derechos son procesos necesarios para completar la matrícula y asegurar la inscripción en las unidades de formación correspondientes."
+      ],
+      "follow_up": [
+        "¿Cuáles son las categorías de estudiantes?"
+      ]
+    },
+    {
+      "tag": "categorias_calidad_estudiantes",
+      "patterns": [
+        "categorías de estudiantes",
+        "calidad de estudiante",
+        "¿Qué significa ser un estudiante regular?",
+        "¿Qué es un estudiante por convenio?",
+        "¿Qué es un estudiante de reingreso?",
+        "¿Qué implica la transferencia externa de estudiantes?",
+        "transferencia interna de estudiantes",
+        "¿Cómo se clasifica a los estudiantes?",
+        "¿Cuáles son los estados académicos de los estudiantes?",
+        "¿Qué significa ser un estudiante destacado?"
+      ],
+      "responses": [
+        "Las categorías de estudiantes en el Instituto incluyen estudiantes de pregrado, especialización, articulación, programas para el trabajo y desarrollo humano, y educación continuada. La calidad de estudiante puede ser regular, por convenio, de reingreso, transferencia externa o interna. Cada categoría y estado académico tiene sus propias definiciones y requisitos."
+      ],
+      "follow_up": [
+        "derechos de los estudiantes"
+      ]
+    },
+    {
+      "tag": "derechos_estudiantes",
+      "patterns": [
+        "derechos de los estudiantes",
+        "derechos estudiantes",
+        "naturaleza de los derechos",
+        "¿Cuáles son los derechos específicos de los estudiantes?",
+        "¿Qué derechos tienen los estudiantes en el Instituto?",
+        "derecho a la participación estudiantil",
+        "derecho a la orientación académica",
+        "derecho a la integridad personal",
+        "derecho al uso de instalaciones",
+        "derecho a recibir estímulos",
+        "derecho a la confidencialidad"
+      ],
+      "responses": [
+        "Los estudiantes del Instituto Tecnológico del Putumayo tienen una serie de derechos, incluyendo la integridad e intimidad personal y familiar, el buen nombre, la honra, el conocimiento oportuno de los programas de las unidades de formación, la orientación en el aprendizaje, el uso de las instalaciones, y la participación en actividades de bienestar universitario. También tienen derecho a ser informados sobre las faltas de disciplina, recibir orientación y apoyo, participar en la vida cultural y deportiva del Instituto, y acceder a servicios de bienestar universitario."
+      ],
+      "follow_up": [
+        "deberes de los estudiantes"
+      ]
+    },
+    {
+      "tag": "deberes_estudiantes",
+      "patterns": [
+        "deberes de los estudiantes",
+        "¿Cuáles son los deberes específicos de los estudiantes?",
+        "¿Qué deberes tienen los estudiantes del Instituto?",
+        "deber de respeto a las normas",
+        "obligaciones académicas de los estudiantes",
+        "comportamientos esperados de los estudiantes",
+        "deber de mantener la integridad académica",
+        "deber de cuidado de las instalaciones",
+        "deber de participar en actividades académicas",
+        "deber de respeto a la comunidad educativa"
+      ],
+      "responses": [
+        "Los estudiantes del Instituto Tecnológico del Putumayo tienen deberes específicos que incluyen conocer y asumir la filosofía del Instituto, ejercitar el diálogo y la concertación, no utilizar el nombre del Instituto sin autorización, diligenciar las evaluaciones de desempeño de los docentes, presentar observaciones sobre el desarrollo del programa, portar el carné de estudiante, proceder con veracidad y responsabilidad, cumplir con el acta de encuadre pedagógico, matricularse en las fechas establecidas, mantener un alto compromiso con la excelencia académica, conocer los contenidos de las unidades de formación, aceptar y cumplir las sanciones impuestas, y demostrar buen comportamiento dentro y fuera del Instituto."
+      ],
+      "follow_up": [
+        "programas académicos"
+      ]
+    },
+    {
+      "tag": "programas_academicos",
+      "patterns": [
+        "programas académicos",
+        "definición de programas académicos",
+        "¿Cómo se estructura un programa académico?",
+        "ciclos propedéuticos",
+        "modalidades de programas académicos",
+        "práctica empresarial y pasantía",
+        "¿Qué es un programa académico?",
+        "¿Qué son los ciclos propedéuticos?",
+        "¿Qué modalidades de programas académicos ofrece el Instituto?",
+        "¿Qué es la práctica empresarial y pasantía?"
+      ],
+      "responses": [
+        "Un programa académico es la integración de objetivos, estrategias organizativas, planes de estudio, metodologías de enseñanza y aprendizaje, investigación y extensión organizados en una estructura curricular. Los programas académicos en el Instituto Tecnológico del Putumayo incluyen formación técnica profesional, tecnológica, profesional y de especialización. Los ciclos propedéuticos son secuenciales y complementarios, brindando una formación integral con salidas al mercado laboral. La práctica empresarial y pasantía son actividades académicas integradas en las estructuras curriculares como parte del proceso de entrenamiento y vinculación de los estudiantes a contextos profesionales y laborales."
+      ],
+      "follow_up": [
+        "unidades_formacion"
+      ]
+    },
+    {
+      "tag": "unidades_formacion",
+      "patterns": [
+        "unidades de formación",
+        "clasificación de unidades de formación",
+        "módulo en la formación por competencias",
+        "espacio académico en la formación tradicional",
+        "especificaciones del programa de unidades de formación",
+        "¿Qué son las unidades de formación?",
+        "¿Cómo se clasifican las unidades de formación?",
+        "¿Qué es un módulo en la formación por competencias?",
+        "¿Qué es un espacio académico en la formación tradicional?",
+        "¿Qué especificaciones debe incluir el programa de cada unidad de formación?"
+      ],
+      "responses": [
+        "Las unidades de formación son la estructura formal de una serie de aprendizajes que llevan asociados unos resultados conforme al plan de estudios de cada programa. En los programas diseñados por ciclos y por competencias, la unidad de formación es el módulo, que integra habilidades, destrezas, conocimientos y actitudes. En los programas con enfoque tradicional, la unidad de formación es el espacio académico, que es el conjunto de aprendizajes que conforman el plan de estudios obligatorio. Cada unidad de formación debe especificar facultad y programa, período o nivel, campo del conocimiento, nombre y código, características, prerrequisitos, número de créditos, intensidad horaria, objetivos, contenidos, estrategia pedagógica, tipos de evaluación, disponibilidad del docente, evidencias de aprendizaje y bibliografía."
+      ],
+      "follow_up": [
+        "créditos académicos"
+      ]
+    },
+    {
+      "tag": "creditos",
+      "patterns": [
+        "créditos académicos",
+        "definición de créditos",
+        "equivalencia de créditos",
+        "cálculo de horas de trabajo académico",
+        "¿Qué es un crédito académico?",
+        "¿Cómo se define un crédito académico?",
+        "¿Cuántas horas de trabajo académico equivale un crédito?",
+        "¿Cómo se calcula el número total de horas promedio de trabajo académico semanal?",
+        "créditos en el plan de estudios",
+        "horas de trabajo independiente"
+      ],
+      "responses": [
+        "Un crédito académico es la unidad de medida del trabajo académico del estudiante. Consiste en el tiempo estimado de actividad académica del estudiante en función de las competencias que se espera desarrollar. Un crédito equivale a 48 horas de trabajo académico, incluyendo horas con acompañamiento directo del docente y horas de actividades independientes de estudio y prácticas necesarias para alcanzar las metas de aprendizaje. El número total de horas promedio de trabajo académico semanal correspondiente a un crédito se calcula dividiendo las cuarenta y ocho horas de trabajo por el número de semanas definidas para cada período lectivo."
+      ],
+      "follow_up": [
+        "cancelación de unidades de formación"
+      ]
+    },
+    {
+      "tag": "cancelacion_adicion_unidades_formacion",
+      "patterns": [
+        "cancelación de unidades de formación",
+        "adición de unidades de formación",
+        "procedimientos para cancelación de unidades de formación",
+        "procedimientos para adición de unidades de formación",
+        "cancelación de matrícula",
+        "consecuencias de la cancelación de unidades de formación",
+        "¿Cómo se realiza la cancelación de unidades de formación?",
+        "¿Qué implica la adición de unidades de formación?",
+        "¿Cuáles son los procedimientos para la cancelación y adición de unidades de formación?",
+        "¿Qué es la cancelación de matrícula?"
+      ],
+      "responses": [
+        "¿Qué son los cursos intensivos?"
+      ],
+      "follow_up": [
+        "¿Qué son los cursos intensivos?",
+        "¿Cuáles son las condiciones para los cursos intensivos?",
+        "¿Cómo se programan los cursos intensivos?",
+        "¿Cuáles son los requisitos para la matrícula en cursos intensivos?",
+        "¿Cuáles son las condiciones de evaluación para los cursos intensivos?"
+      ]
+    },
+    {
+      "tag": "cursos_intensivos",
+      "patterns": [
+        "cursos intensivos",
+        "condiciones para cursos intensivos",
+        "programación de cursos intensivos",
+        "matrícula en cursos intensivos",
+        "evaluación de cursos intensivos",
+        "¿Qué son los cursos intensivos?",
+        "¿Cuáles son las condiciones para los cursos intensivos?",
+        "¿Cómo se programan los cursos intensivos?",
+        "¿Cuáles son los requisitos para la matrícula en cursos intensivos?",
+        "¿Cuáles son las condiciones de evaluación para los cursos intensivos?"
+      ],
+      "responses": [
+        "Los cursos intensivos son aquellos que se realizan de manera intensiva conservando el contenido programático, objetivos y duración establecidos para las unidades de formación. Pueden solicitarse para repetir unidades de formación perdidas, adelantar unidades de formación o nivelación. Los cursos intensivos se desarrollan con una presencialidad del 60% y 40% de trabajo independiente orientado por el docente. La matrícula de la unidad de formación solicitada requiere de un grupo máximo de treinta estudiantes. Los cursos intensivos no son habilitables y en caso de reprobar la unidad, el estudiante deberá matricularla en calidad de repitente."
+      ],
+      "follow_up": [
+        "periodo académico"
+      ]
+    },
+    {
+      "tag": "periodo_academico",
+      "patterns": [
+        "periodo académico",
+        "duración del periodo académico",
+        "actividades del periodo académico",
+        "año académico",
+        "distribución del año académico",
+        "¿Qué es el periodo académico?",
+        "¿Cuánto dura un periodo académico?",
+        "¿Qué actividades se realizan durante el periodo académico?",
+        "¿Qué es el año académico?",
+        "¿Cómo se distribuye el año académico?"
+      ],
+      "responses": [
+        "El periodo académico es el tiempo necesario para desarrollar las actividades académicas normales correspondientes a un semestre académico en un programa con una duración de dieciocho semanas. Las dieciocho semanas se distribuyen en dieciséis semanas para el desarrollo de los programas correspondientes a las unidades de formación y dos semanas para la presentación de las pruebas de examen final y habilitaciones. El año académico está distribuido en dos periodos académicos de dieciocho semanas cada uno, dedicándose las demás semanas del año a vacaciones, actividades de perfeccionamiento docente, planeación, evaluación institucional y jornadas educativas diversas."
+      ],
+      "follow_up": [
+        "asistencia a las actividades académicas"
+      ]
+    },
+    {
+      "tag": "asistencia_actividades_academicas",
+      "patterns": [
+        "asistencia a las actividades académicas",
+        "intensidad horaria de las actividades académicas",
+        "asistencia obligatoria",
+        "registro de asistencia",
+        "consecuencias de la inasistencia",
+        "¿Qué es la asistencia a las actividades académicas?",
+        "¿Cuál es la intensidad horaria de las actividades académicas?",
+        "¿Qué implica la asistencia obligatoria a las actividades académicas?",
+        "¿Cómo se registra la asistencia?",
+        "¿Cuáles son las consecuencias de la inasistencia?"
+      ],
+      "responses": [
+        "Las actividades académicas tienen la intensidad horaria señalada en el plan de estudios correspondiente y se ceñirán a la modalidad y reglamentación específicas de cada facultad. La asistencia a las actividades académicas presenciales previamente definidas en el plan de estudios es obligatoria. El registro de asistencia se lleva a cabo por cada profesor en listas elaboradas por el Centro de Admisiones y Registro Académico. Si las faltas de asistencia superan el 20% de las actividades académicas presenciales programadas en una unidad de formación por ausencias no justificadas, el estudiante reprobará dicha unidad de formación. Si la nota definitiva es igual o superior a 4.0, se dará como aprobada la unidad de formación siempre y cuando haya asistido al menos al 40% de las actividades académicas programadas."
+      ],
+      "follow_up": [
+        "evaluación académica"
+      ]
+    },
+    {
+      "tag": "evaluacion_calificaciones",
+      "patterns": [
+        "evaluación académica",
+        "tipos de evaluaciones",
+        "calificaciones en el Instituto",
+        "pruebas de admisión",
+        "validación de unidades de formación",
+        "¿Qué es la evaluación académica?",
+        "¿Qué tipos de evaluaciones existen?",
+        "¿Cuáles son las calificaciones en el Instituto?",
+        "¿Qué son las pruebas de admisión?",
+        "¿Qué es la validación de unidades de formación?"
+      ],
+      "responses": [
+        "La evaluación académica es el proceso mediante el cual se mide el rendimiento de los estudiantes en las distintas unidades de formación. Existen varios tipos de evaluaciones, incluyendo pruebas de admisión, evaluaciones de seguimiento, exámenes parciales y finales, pruebas de clasificación, supletorias, habilitaciones, validaciones y homologaciones. Las calificaciones en el Instituto se asignan en una escala que va desde 0.0 hasta 5.0, siendo 5.0 la máxima calificación."
+      ],
+      "follow_up": [
+        "evaluación por competencias"
+      ]
+    },
+    {
+      "tag": "evaluacion_competencias",
+      "patterns": [
+        "evaluación por competencias",
+        "escala de valoración de competencias",
+        "convocatorias institucionales",
+        "evidencias de aprendizaje",
+        "¿Qué es la evaluación por competencias?",
+        "¿Cuál es la escala de valoración de competencias?",
+        "¿Qué son las convocatorias institucionales?",
+        "¿Qué son las evidencias de aprendizaje?"
+      ],
+      "responses": [
+        "La evaluación por competencias es un sistema que mide el desempeño del estudiante en función de su capacidad para aplicar conocimientos, habilidades y actitudes en contextos específicos. La escala de valoración de competencias incluye categorías como Excelente (5.0), Muy Bueno (4.5), Bueno (4.0), Aceptable (3.5), Regular (3.0), Deficiente (2.5), Malo (2.0), y Mínima (1.5). Las convocatorias institucionales y las evidencias de aprendizaje son elementos clave en este sistema de evaluación, permitiendo la validación de competencias a través de pruebas y trabajos prácticos."
+      ],
+      "follow_up": [
+        "¿Qué es el rendimiento académico?"
+    
+      ]
+    },
+    {
+      "tag": "rendimiento_academico",
+      "patterns": [
+        "rendimiento académico",
+        "promedio del período académico",
+        "revisión de calificaciones",
+        "publicación de calificaciones",
+        "¿Qué es el rendimiento académico?",
+        "¿Cómo se calcula el promedio del período académico?",
+        "¿Cuál es el proceso de revisión de calificaciones?",
+        "¿Cuándo se publican las calificaciones?"
+      ],
+      "responses": [
+        "El rendimiento académico se refiere al desempeño del estudiante en sus actividades académicas y se mide a través del promedio de sus calificaciones en un período académico. El promedio del período académico se calcula sumando las calificaciones obtenidas en todas las unidades de formación y dividiéndolas por el número total de unidades. Las calificaciones deben ser revisadas y publicadas según el calendario académico establecido por el Instituto."
+      ],
+      "follow_up": [
+        "¿Qué es el trabajo de grado?"
+      ]
+    },
+    {
+      "tag": "trabajo_grado",
+      "patterns": [
+        "trabajo de grado",
+        "requisitos para el trabajo de grado",
+        "modalidades de trabajo de grado",
+        "calificación de trabajos de grado",
+        "¿Qué es el trabajo de grado?",
+        "¿Cuáles son los requisitos para el trabajo de grado?",
+        "¿Qué modalidades de trabajo de grado existen?",
+        "¿Cómo se califican los trabajos de grado?"
+      ],
+      "responses": [
+        "El trabajo de grado es un requisito académico que debe cumplir el estudiante para obtener su título. Puede presentarse en diferentes modalidades, como monografía, proyecto de investigación, o proyecto aplicado. Los requisitos para el trabajo de grado incluyen la aprobación de todas las unidades de formación previas y la presentación de una propuesta aceptada por el Consejo Académico. Las calificaciones del trabajo de grado pueden ser Reprobado, Aprobado, Meritorio, o Laureado, dependiendo de la calidad y el impacto del trabajo presentado."
+      ],
+      "follow_up": [
+        "¿Cómo se otorgan los títulos académicos?"
+      ]
+    },
+    {
+      "tag": "otorgamiento_titulos",
+      "patterns": [
+        "otorgamiento de títulos",
+        "otorgamiento de titulos",
+        "procedimientos para el otorgamiento de títulos",
+        "grados póstumos",
+        "grados honoríficos y honoris causa",
+        "¿Cómo se otorgan los títulos académicos?",
+        "¿Qué procedimientos se siguen para el otorgamiento de títulos?",
+        "¿Qué son los grados póstumos?",
+        "¿Qué son los grados honoríficos y honoris causa?"
+      ],
+      "responses": [
+        "El otorgamiento de títulos es el proceso mediante el cual el Instituto confiere el grado académico a un estudiante que ha cumplido con todos los requisitos académicos y administrativos. Los procedimientos para el otorgamiento de títulos incluyen la verificación del cumplimiento de los requisitos, la aprobación por parte del Consejo Académico, y la entrega del título en una ceremonia oficial. Los grados póstumos se otorgan a estudiantes fallecidos que cumplieron con la mayoría de los requisitos para la obtención del título. Los grados honoríficos y honoris causa se conceden a personas que han realizado contribuciones significativas en sus campos de acción."
+      ],
+      "follow_up": [
+        "constancias y certificados de estudio"
+      ]
+    },
+    {
+      "tag": "constancias_certificados",
+      "patterns": [
+        "constancias y certificados de estudio",
+        "Constancias",
+        "tipos de constancias y certificados",
+        "Certificados de Estudio",
+        "Certificados",
+        "procedimientos para emitir constancias y certificados",
+        "información en las constancias y certificados de estudio",
+        "¿Qué son las constancias y certificados de estudio?",
+        "¿Qué tipos de constancias y certificados existen?",
+        "¿Cuáles son los procedimientos para emitir constancias y certificados?",
+        "¿Qué información incluyen las constancias y certificados de estudio?"
+      ],
+      "responses": [
+        "Las constancias y certificados de estudio son documentos oficiales que acreditan la condición académica del estudiante. Existen varios tipos de constancias y certificados, incluyendo constancias de inscripción, de asistencia, de calificaciones, y de finalización de estudios. Los procedimientos para emitir estos documentos requieren la solicitud formal por parte del estudiante y la verificación de la información por la oficina de Admisiones, Registro y Control Académico. Las constancias y certificados incluyen información como el nombre del estudiante, el programa académico, las calificaciones obtenidas, y la fecha de emisión."
+      ],
+      "follow_up": [
+        "reconocimientos académicos"
+      ]
+    },
+    {
+      "tag": "reconocimientos_estimulos",
+      "patterns": [
+        "reconocimientos académicos",
+        "tipos de estímulos",
+        "matrícula de excelencia",
+        "medalla a la excelencia",
+        "matrícula de honor",
+        "¿Qué son los reconocimientos académicos?",
+        "¿Qué tipos de estímulos se otorgan?",
+        "¿Qué es la matrícula de excelencia?",
+        "¿Qué es la medalla a la excelencia?",
+        "¿Qué es la matrícula de honor?"
+      ],
+      "responses": [
+        "Los reconocimientos académicos y estímulos son formas de premiar el rendimiento y el esfuerzo de los estudiantes. La matrícula de excelencia se otorga a los estudiantes con un rendimiento académico sobresaliente. La medalla a la excelencia Ernesto Muriel Silva es un reconocimiento especial a los estudiantes que destacan en sus estudios y actividades académicas. La matrícula de honor se concede a aquellos estudiantes que han mantenido un promedio académico excepcional a lo largo de su carrera."
+      ],
+      "follow_up": [
+        "¿Qué servicios de bienestar ofrece el Instituto?"
+      ]
+    },
+    {
+      "tag": "servicios_bienestar",
+      "patterns": [
+        "servicios de bienestar",
+        "servicios asistenciales",
+        "servicios culturales y deportivos",
+        "acceso a los servicios de bienestar",
+        "reglamentos de servicios de bienestar",
+        "¿Qué servicios de bienestar ofrece el Instituto?",
+        "¿Cuáles son los servicios asistenciales disponibles?",
+        "¿Qué servicios culturales y deportivos se ofrecen?",
+        "¿Cómo se accede a los servicios de bienestar?",
+        "¿Qué reglamentos regulan el acceso a los servicios de bienestar?"
+      ],
+      "responses": [
+        "El Instituto ofrece una variedad de servicios de bienestar para apoyar el desarrollo integral de los estudiantes. Los servicios asistenciales incluyen atención médica y psicológica, así como orientación y asesoramiento. Los servicios culturales y deportivos fomentan la participación en actividades artísticas, culturales y deportivas, contribuyendo al desarrollo físico y emocional de los estudiantes. El acceso a los servicios de bienestar está regulado por reglamentos específicos que establecen los procedimientos y condiciones para su uso."
+      ],
+      "follow_up": [
+        "¿Qué es el régimen disciplinario?"
+      ]
+    },
+    {
+      "tag": "regimen_disciplinario",
+      "patterns": [
+        "régimen disciplinario",
+        "regimen disciplinario",
+        "faltas disciplinarias",
+        "conductas contrarias a la vida institucional",
+        "sanciones por faltas disciplinarias",
+        "gestión de faltas disciplinarias",
+        "¿Qué es el régimen disciplinario?",
+        "¿Cuáles son las faltas disciplinarias?",
+        "¿Qué conductas son contrarias a la vida institucional?",
+        "¿Cuáles son las sanciones por faltas disciplinarias?",
+        "¿Cómo se gestionan las faltas disciplinarias?"
+      ],
+      "responses": [
+        "El régimen disciplinario establece las normas y procedimientos para mantener la disciplina y el orden en el Instituto. Las faltas disciplinarias incluyen acciones que van en contra de los principios y normas del Instituto, como fraude académico, suplantación, y sustracción de cuestionarios. Las sanciones por faltas disciplinarias varían desde amonestaciones verbales y escritas hasta la expulsión definitiva. La gestión de las faltas disciplinarias implica un proceso formal de investigación y sanción, asegurando el debido proceso y el derecho a la defensa del estudiante involucrado."
+      ],
+      "follow_up": [
+        "¿Qué tipos de sanciones existen?"
+      ]
+    },
+    {
+      "tag": "sanciones",
+      "patterns": [
+        "tipos de sanciones",
+        "Sanciones",
+        "procedimiento para imponer sanciones",
+        "amonestación verbal",
+        "amonestación escrita",
+        "suspensión de servicios",
+        "cancelación de matrícula",
+        "expulsión definitiva",
+        "¿Qué tipos de sanciones existen?",
+        "¿Cuál es el procedimiento para imponer sanciones?",
+        "¿Qué es una amonestación verbal?",
+        "¿Qué es una amonestación escrita?"
+      ],
+      "responses": [
+        "Las sanciones disciplinarias incluyen amonestación verbal y escrita, suspensión de servicios, cancelación de matrícula, y expulsión definitiva. El procedimiento para imponer sanciones implica la identificación de la falta, notificación al estudiante, investigación, audiencia, y resolución del caso. Una amonestación verbal es una advertencia formal dada en persona, mientras que una amonestación escrita se documenta y se coloca en el expediente del estudiante."
+      ],
+      "follow_up": [
+        "proceso disciplinario"
+      ]
+    },
+    {
+      "tag": "procedimiento_disciplinario",
+      "patterns": [
+        "derechos del investigado",
+        "inicio del proceso disciplinario",
+        "proceso disciplinario",
+        "procedimiento disciplinario",
+        "desarrollo del proceso disciplinario",
+        "notificación de providencias y sanciones",
+        "¿Qué derechos tiene el investigado en un proceso disciplinario?",
+        "¿Cómo se inicia un proceso disciplinario?",
+        "¿Qué etapas incluye el desarrollo del proceso disciplinario?",
+        "¿Cómo se notifican las providencias y sanciones?",
+        "¿Qué implica el proceso disciplinario?",
+        "¿Cómo se garantiza el debido proceso en un proceso disciplinario?"
+      ],
+      "responses": [
+        "El proceso disciplinario garantiza los derechos del investigado, incluyendo el derecho a ser informado de las acusaciones, el derecho a defenderse, y el derecho a un proceso justo. El proceso se inicia con la notificación de la falta, seguida por una investigación, audiencia, y resolución del caso. Las providencias y sanciones se notifican formalmente al estudiante, asegurando que se cumplan los procedimientos establecidos y se respete el debido proceso."
+      ],
+      "follow_up": [
+       
+        "¿Qué normas complementarias existen?"
+      ]
+    },
+    {
+      "tag": "disposiciones_varias",
+      "patterns": [
+        "disposiciones adicionales",
+        "normas complementarias",
+        "disposiciones varias del estatuto",
+        "aspectos no cubiertos específicamente",
+        "¿Qué disposiciones adicionales incluye el estatuto?",
+        "¿Qué normas complementarias existen?",
+        "¿Cuáles son las disposiciones varias mencionadas en el estatuto?",
+        "¿Qué aspectos no cubiertos específicamente en otros capítulos se incluyen aquí?",
+        "¿Qué otros aspectos regula el estatuto?",
+        "¿Qué temas adicionales se abordan en las disposiciones varias?"
+      ],
+      "responses": [
+        "Las disposiciones varias del estatuto incluyen normas adicionales y complementarias que no se han cubierto específicamente en otros capítulos. Estas pueden abordar aspectos administrativos, académicos, disciplinarios, y de bienestar, proporcionando una guía completa y detallada para la gestión y operación del Instituto. También pueden incluir regulaciones sobre eventos especiales, procedimientos administrativos adicionales, y cualquier otra normativa necesaria para el funcionamiento adecuado del Instituto."
+      ],
+      "follow_up": [
+        "vigencia del estatuto"
+      ]
+    },
+    {
+      "tag": "vigencia_estatuto",
+      "patterns": [
+        "vigencia del estatuto",
+        "entrada en vigencia del estatuto",
+        "procedimientos para la entrada en vigencia",
+        "comunicación de la vigencia del estatuto",
+        "implicaciones de la vigencia del estatuto",
+        "¿Cuándo entra en vigencia el estatuto?",
+        "¿Qué procedimientos se siguen para la entrada en vigencia?",
+        "¿Cómo se comunica la vigencia del estatuto a la comunidad?",
+        "¿Qué implicaciones tiene la vigencia del estatuto para los estudiantes y el personal?",
+        "¿Qué cambios se implementan con la vigencia del nuevo estatuto?"
+      ],
+      "responses": [
+        "La vigencia del estatuto establece la fecha a partir de la cual sus disposiciones son aplicables. Los procedimientos para la entrada en vigencia incluyen la aprobación por parte del Consejo Directivo, la promulgación oficial, y la comunicación a toda la comunidad del Instituto. La vigencia del estatuto implica que todos los estudiantes, docentes, y personal administrativo deben cumplir con las nuevas normativas y procedimientos establecidos."
+      ],
+      "follow_up": [
+        "misión del Instituto Tecnológico del Putumayo"
+      ]
+    },
+    {
+      "tag": "mision_instituto",
+      "patterns": [
+        "misión del Instituto Tecnológico del Putumayo",
+        "¿Cuál es la misión del Instituto Tecnológico del Putumayo?",
+        "objetivos de la misión del Instituto",
+        "compromisos de la misión del Instituto",
+        "¿Qué busca lograr la misión del Instituto Tecnológico del Putumayo?"
+      ],
+      "responses": [
+        "La misión del Instituto Tecnológico del Putumayo es formar técnicos, tecnólogos y profesionales comprometidos con la biodiversidad y la adaptación de tecnologías aplicables al contexto. Su objetivo es proporcionar una educación de calidad que responda a las necesidades del entorno, promoviendo el desarrollo sostenible y el bienestar de la comunidad."
+      ],
+      "follow_up": [
+        "visión del Instituto Tecnológico del Putumayo"
+      ]
+    },
+    {
+      "tag": "vision_instituto",
+      "patterns": [
+        "visión del Instituto Tecnológico del Putumayo",
+        "¿Cuál es la visión del Instituto Tecnológico del Putumayo?",
+        "objetivos de la visión del Instituto",
+        "metas a largo plazo del Instituto",
+        "¿Qué aspira a ser el Instituto Tecnológico del Putumayo en el futuro?"
+      ],
+      "responses": [
+        "La visión del Instituto Tecnológico del Putumayo es consolidarse como una institución acreditada y líder en procesos tecnológicos, socioeconómicos, culturales y ambientales. Aspira a ser reconocida por su excelencia académica, su innovación y su contribución al desarrollo sostenible."
+      ],
+      "follow_up": [
+        "principios del Instituto Tecnológico del Putumayo"
+      ]
+    },
+
+    {
+      "tag": "principios",
+      "patterns": [
+        "principios del Instituto Tecnológico del Putumayo",
+        "principios"
+      ],
+      "responses": [
+        "Los principios del Instituto Tecnológico del Putumayo incluyen ética, autonomía, democracia participativa, idoneidad, compromiso social, integración, universalidad, racionalidad, pertinencia, sostenibilidad, y sustentabilidad."
+      ],
+      "follow_up": [
+        "valores del Instituto Tecnológico del Putumayo"
+      ]
+    },
+    {
+      "tag": "valores",
+      "patterns": [
+        "valores del Instituto Tecnológico del Putumayo",
+        "valores"
+      ],
+      "responses": [
+        "Los valores del Instituto Tecnológico del Putumayo incluyen participación, solidaridad y tolerancia, respeto, sentido de pertenencia, honestidad, libertad, y liderazgo."
+      ],
+      "follow_up": [
+        "objetivos del Instituto Tecnológico del Putumayo"
+      ]
+    },
+    {
+      "tag": "objetivos",
+      "patterns": [
+        "objetivos del Instituto Tecnológico del Putumayo",
+        "objetivos?"
+      ],
+      "responses": [
+        "Los objetivos del Instituto Tecnológico del Putumayo son orientar la gestión y administración de los programas académicos, determinar políticas para la docencia, la investigación y la proyección social, establecer lineamientos generales para la estructura organizacional, y orientar el diseño y desarrollo de una estructura presupuestal que permita una gestión efectiva."
+      ],
+      "follow_up": [
+        "política de calidad del Instituto Tecnológico del Putumayo"
+      ]
+    },
+    {
+      "tag": "politica_calidad",
+      "patterns": [
+        "política de calidad del Instituto Tecnológico del Putumayo",
+        "politica calidad",
+        "¿Cuál es la política de calidad del Instituto Tecnológico del Putumayo?",
+        "¿Qué significa la política de calidad del Instituto Tecnológico del Putumayo?"
+      ],
+      "responses": [
+        "El Instituto Tecnológico del Putumayo declara la calidad como un compromiso permanente, con el fin de satisfacer las necesidades de sus usuarios, fortaleciendo la docencia, la investigación y la proyección social. Garantiza el mejoramiento continuo de los procesos académicos y administrativos, con base en el compromiso de su talento humano y la gestión y optimización de sus recursos, dentro del marco legal aplicable."
+      ],
+      "follow_up": [
+        "Evaluación y Rendimiento Académico"
+      ]
+    },
+
+    {
+      "tag": "evaluacion_rendimiento_academico",
+      "patterns": [
+        "sistema de evaluación por competencias",
+        "Evaluación y Rendimiento Académico",
+        "medición del rendimiento académico",
+        "procedimientos de matrícula inicial y renovación",
+        "otorgamiento de reconocimientos y estímulos académicos",
+        "¿Qué es el sistema de evaluación por competencias?",
+        "¿Cómo se mide el rendimiento académico en el Instituto?",
+        "¿Qué procedimientos se siguen para la matrícula inicial y renovación?",
+        "¿Cómo se otorgan los reconocimientos y estímulos académicos?",
+        "evaluación basada en competencias",
+        "criterios de rendimiento académico"
+      ],
+      "responses": [
+        "El sistema de evaluación por competencias mide el rendimiento académico del estudiante en función de su capacidad para aplicar conocimientos, habilidades y actitudes en contextos específicos. Los procedimientos de matrícula inicial y renovación incluyen la inscripción en las fechas establecidas, la presentación de la documentación requerida, y el pago de derechos. Los reconocimientos y estímulos académicos, como la matrícula de excelencia y la medalla a la excelencia Ernesto Muriel Silva, se otorgan a estudiantes con desempeño sobresaliente en sus estudios."
+      ]
+    }
+  ]
+}

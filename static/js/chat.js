@@ -72,7 +72,7 @@ function showClearBTN(chatData) {
     const clearButton = document.getElementById('clearChatButton');
     if (chatData.length > 2) {
         clearButton.style.display = 'block';
-    } 
+    }
 }
 function clearSession() {
     fetch('/clear_session', {
@@ -88,3 +88,18 @@ function clearSession() {
         }
     });
 }
+
+document.querySelectorAll('.follow_up').forEach(item => {
+    item.addEventListener('click', function () {
+        const value = this.getAttribute('data-value');
+        const form = document.getElementById('answerForm');
+        const textarea = document.getElementById('payload');
+
+        textarea.value = value;
+        setTimeout(() => {
+            form.submit();
+        }, 200);
+        this.classList.add('hidden');
+
+    });
+});
