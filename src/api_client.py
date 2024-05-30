@@ -5,13 +5,10 @@ from dotenv import load_dotenv
 
 from src.text_utilities import TextUtilities
 from src.text_rocessor import TextProcessor
-from src.response_finder import ResponseFinder
+from src.chat.chat import ChatBot
 
 utilities = TextUtilities()
-
-
-json_path = os.path.join(os.path.dirname(__file__), "intenciones.json")
-response_finder = ResponseFinder(json_path)
+load_dotenv()
 
 
 class ApiClient:
@@ -24,8 +21,6 @@ class ApiClient:
 
     def make_request(self, payload):
         response = None
-        print("hola")
-        print(json_path)
         try:
             session.modified = True
 
@@ -34,7 +29,7 @@ class ApiClient:
             response, follow_up = self._get_fallback_response(payload)
             print(response, follow_up)
             if response:
-                translated = response
+                translated = utilities.translate_text(response)
                 self._update_session_conversation(payload, question_time, translated)
                 self._follow_up(follow_up)
                 return {"response": translated}
@@ -131,8 +126,6 @@ class ApiClient:
         return response
 
     def _get_fallback_response(self, payload):
-        return response_finder.find_response(payload)
+        chatbot = ChatBot()
 
-        # TODO: Implementar un mecanismo de fallback para responder según intenciones
-        answer = "No pude contestar a tu pregunta, por favor intenta de nuevo. NPL"
-        # self._update_session_conversation(payload, question_time, answer)
+        return chatbot.get_response(payload)
