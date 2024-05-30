@@ -53,7 +53,12 @@ class ApiClient:
 
             translated = "No pude contestar a tu pregunta, por favor intenta de nuevo."
             self._update_session_conversation(payload, question_time, translated, None)
-            return {"response": translated}
+            return self._handle_request_exception(
+                e,
+                response,
+                payload,
+                question_time,
+            )
 
     def _send_request(self, payload):
         question_payload = {
@@ -109,10 +114,13 @@ class ApiClient:
                 "time": error_time,
             }
         )
-        return False
+        print(error_message)
+        
+        return response
 
     def _get_fallback_response(self, payload, question_time):
+        return False
+
         # TODO: Implementar un mecanismo de fallback para responder según intenciones
         answer = "No pude contestar a tu pregunta, por favor intenta de nuevo. NPL"
-        #self._update_session_conversation(payload, question_time, answer)
-        return False
+        # self._update_session_conversation(payload, question_time, answer)
