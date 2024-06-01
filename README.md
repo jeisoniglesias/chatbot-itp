@@ -1,9 +1,5 @@
 # README
 
-This is the [Flask](http://flask.pocoo.org/) [quick start](http://flask.pocoo.org/docs/1.0/quickstart/#a-minimal-application) example for [Render](https://render.com).
+Poyecto final Chatbot con informacion institucional, se desarrollo 3 maneras, el proyeecto https://github.com/jeisoniglesias/chatbot-itp se compone por dos clases, "chat.py" debuelve una respuesta basada en desiciones, la segunda "api_client.py" clase es la principal se hace consumo a chat.py si este no devuelve nada se hace el consumo al api que provee Stack.ai, las respuestas y preguntas se almacenan en sesion
 
-The app in this repo is deployed at [https://flask.onrender.com](https://flask.onrender.com).
 
-## Deployment
-
-Follow the guide at https://render.com/docs/deploy-flask.
