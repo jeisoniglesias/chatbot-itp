@@ -61,7 +61,7 @@ class ChatBot:
                 if tag == intent["tag"]:
                     return random.choice(intent["responses"]), []
         else:
-            return False
+            return False, []
 
 
 """if __name__ == "__main__":

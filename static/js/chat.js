@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", (event) => {
+    console.log("DOM fully loaded and parsed");
     const toastTrigger = document.getElementById("liveToastBtn");
     const toastLiveExample = document.getElementById("liveToast");
 

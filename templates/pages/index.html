@@ -5,8 +5,39 @@ title %}Chatbot itp - Chat{% endblock %} {% block styles %}
   type="text/css"
   href="{{url_for('static', filename='css/chat.css') }}"
 />
+<style>
+  .ashe-preloader-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f2f2f2;
+    z-index: 100000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo-img {
+    max-width: 360px;
+  }
+  .page-frame {
+    position: relative;
+    width: 100% !important;
+    height: 100vh !important;
+    overflow: hidden;
+  }
+</style>
 {% endblock %} {% block content %}
-<main class="d-flex h-100 bg-light">
+
+<iframe
+  src="https://itp.edu.co/ITP2022/"
+  class="page-frame"
+  frameborder="0"
+></iframe>
+
+<main class="d-flex h-100 bg-light" style="overflow: hidden">
   <div class="position-fixed bottom-0 end-0 mb-3 me-3">
     <button
       type="button"
@@ -28,7 +59,7 @@ title %}Chatbot itp - Chat{% endblock %} {% block styles %}
       <span
         class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle"
       >
-        <span class="visually-hidden">New alerts</span>
+        <span class="visually-hidden">chat</span>
       </span>
     </button>
     <div class="toast-container position-fixed bottom-0 end-0 p-3 text-body">
@@ -44,7 +75,7 @@ title %}Chatbot itp - Chat{% endblock %} {% block styles %}
           <div class="card-header msg_head">
             <div class="row">
               <div class="col-8 col-sm-6">
-                <strong class="me-auto">Bootstrap</strong>
+                <strong class="me-auto">ChatItp</strong>
               </div>
 
               <div class="col-4 col-sm-6 text-end">
@@ -189,4 +220,5 @@ title %}Chatbot itp - Chat{% endblock %} {% block styles %}
 <!---->
 {% endblock %} {% block scripts %}
 <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+
 {% endblock %}

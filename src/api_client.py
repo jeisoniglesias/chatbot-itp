@@ -27,13 +27,11 @@ class ApiClient:
             question_time = utilities.format_time()
 
             response, follow_up = self._get_fallback_response(payload)
-            print(response, follow_up)
             if response:
-                translated = utilities.translate_text(response)
+                translated = utilities.response_chat(response)
                 self._update_session_conversation(payload, question_time, translated)
                 self._follow_up(follow_up)
                 return {"response": translated}
-
             response = self._send_request(payload)
             response.raise_for_status()
 
@@ -127,5 +125,4 @@ class ApiClient:
 
     def _get_fallback_response(self, payload):
         chatbot = ChatBot()
-
         return chatbot.get_response(payload)
